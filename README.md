@@ -2,6 +2,7 @@
 
 **SpringBoot Set up:**
 
+A4Q1 contains springboot application (API, middleware)
 Install JAVA 17 or higher
 in application.properties set datasoure url to whatever port your psql server runs on
 using your IDE run the application you can go to file A4Q1Application.java to run it
@@ -29,6 +30,7 @@ INSERT INTO students (first_name, last_name, email, enrollment_date) VALUES
 
 **Front End:**
 
+student-management-system contains angular project (front end)
 download node package manager
 open terminal and do npm install -g @angular/cli
 open front end folder: student-management-system
