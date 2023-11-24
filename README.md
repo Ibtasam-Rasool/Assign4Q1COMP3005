@@ -8,7 +8,7 @@ using your IDE run the application you can go to file A4Q1Application.java to ru
 
 **Database setup:** 
 
-login as postgres or  any user and create a database school (CREATE DATABASE school;)
+login as postgres or  any user through the terminal by doing command psql -U [user] and create a database school (CREATE DATABASE school;)
 give access to this database to the user you are currently using (GRANT ALL PRIVILEGES ON DATABASE "school" TO [user])
 
 DDL:
