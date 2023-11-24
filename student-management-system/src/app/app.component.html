@@ -1,0 +1,74 @@
+<div>
+  
+  <div class="heading">
+    <h1>
+      <span>STUDENT MANAGEMENT SYSTEM </span>
+    </h1>
+
+    <h1>
+      <span>Designed by Ibtasam Rasool </span>
+    </h1>
+  </div>
+
+
+  <link href="./app.component.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <div class = "button_selection">
+    <button type="button" (click)="showAllStudents()" class="btn">Show All</button>
+    <button type="button"  (click)="showDeleteOption()" class="btn">Delete</button>
+    <button type="button" class="home-button4 button" (click)="showEmailOption()" class="btn">Change Email</button>
+    <button type="button" class="home-button5 button" (click)="showAddOption()" class="btn">Add Student</button>
+  </div>
+
+
+  <div class="Table">
+    <table *ngIf="showList">
+      <tr>
+        <th>Student ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Enrollment Date</th>
+      </tr>
+      <tr *ngFor="let student of studentList">
+        <td>{{student.student_id}}</td>
+        <td>{{student.first_name}}</td>
+        <td>{{student.last_name}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.enrollment_date}}</td>
+      </tr>
+    </table>
+  </div>
+<!-- 
+  <div class="list">
+    <ul class="home-ul list" *ngIf="showList">
+      <li class="list-item" *ngFor="let student of studentList"><span><div class="defText">StudentID:</div> {{student.student_id}} <div class="defText">First Name:</div> {{student.first_name}} <div class="defText">Last Name:</div> {{student.last_name}} <div class="defText">Email:</div> {{student.email}} <div class="defText">Enrollment Date:</div> {{student.enrollment_date}}</span></li>
+    </ul>
+  </div> -->
+
+  <div class="options">
+    <input *ngIf="deleteOption" type="text" placeholder="Student ID" [(ngModel)]="studentId"/>
+    <button *ngIf="deleteOption" type="button" class="home-button2 button" (click)="deleteStudent()" class="btn">Confirm Delete</button>
+  </div>
+
+  <div class="options">
+    <input *ngIf="studentEmailOption" type="text" placeholder="Student ID" class="home-textinput1 input" [(ngModel)]="studentId"/>
+    <input *ngIf="studentEmailOption" type="text" placeholder="New Email" class="home-textinput2 input" [(ngModel)]="studentEmail"/>
+    <button type="button" class="home-button3 button" *ngIf="studentEmailOption" (click)="updateEmail()" class="btn">Confirm Change</button>
+  </div>
+
+  <div class="options">
+    <form class="home-form" *ngIf="addStudentOption">
+      <input type="text" name="f_name" placeholder="First Name" [(ngModel)]="first_name"/>
+      <input type="text" name="l_name" placeholder="Last Name" class="home-textinput4 input" [(ngModel)]="last_name"/>
+      <input type="text" name="e_mail" placeholder="Student Email" class="home-textinput5 input" [(ngModel)]="studentEmail"/>
+      <input type="text" name="enrollment_date" placeholder="Enrollment Date" class="home-textinput6 input" [(ngModel)]="enrollment_date"/>
+      <div class="home-container2"></div>
+      <button type="button" class="home-button6 button" (click)="addNewStudent()" class="btn">Submit</button>
+    </form>
+  </div>
+      
+   
+  
+</div>
