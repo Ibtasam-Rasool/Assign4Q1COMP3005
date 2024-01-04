@@ -1,4 +1,4 @@
-# Assign4Q1COMP3005
+# Student Management System
 
 **SpringBoot Set up:**
 
